@@ -1,5 +1,15 @@
 package test;
 
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.hamcrest.Matchers;
+import org.junit.Test;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.Matchers.hasSize;
+
 public class C10_Get_ResponseBodyTestiListKullanimi {
 
     /*
@@ -13,6 +23,31 @@ public class C10_Get_ResponseBodyTestiListKullanimi {
                 ve girilen yaslar icinde 61,40 ve 30 degerlerinin oldugunu test edin
             test edin.
      */
+
+    @Test
+    public void get01(){
+
+        // 1 - URL hazirla
+
+        String url = "http://dummy.restapiexample.com/api/v1/employees";
+
+        // 2 - Expected data hazirla
+
+        // 3 - Response 'i kaydet
+
+        Response response = given().when().get(url);
+
+        response.prettyPrint();
+
+        response
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .contentType("application/json")
+                .body("data.id", hasSize(24),
+                        "data.employee_name",hasItem("Ashton Cox"),
+                        "data.employee_age", hasItems(61,30,40));
+    }
 
 
 }

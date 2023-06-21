@@ -47,11 +47,11 @@ public class C07_Get_BodyTekrarlardanKurtulma {
                      .assertThat()
                      .statusCode(200)
                      .contentType("application/json; charset=utf-8")
-                     .body("firstname", equalTo("Susan"),
+                     .body("firstname",equalTo("Susan"),// =====> Matchers classını silip equalTo import ettik.Matcher yazmaya gerek yok artık
                              "lastname",equalTo("Wilson"),
                              "totalprice",equalTo(613),
-                             "depositpaid",equalTo(false),
-                             "additionalneeds",equalTo("Breakfast"));
+                             "depositpaid",Matchers.equalTo(false),
+                             "additionalneeds",Matchers.equalTo("Breakfast"));
 
     }
 }

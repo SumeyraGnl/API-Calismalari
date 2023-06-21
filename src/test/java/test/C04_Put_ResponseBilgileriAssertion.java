@@ -43,7 +43,7 @@ public class C04_Put_ResponseBilgileriAssertion {
 
         // 3 - Response ' i kaydet
 
-        // NOT : Eger sorgumuzda bir requesy body gonderiyorsak gonderdigimiz datanin formatini
+        // NOT : Eger sorgumuzda bir request body gonderiyorsak gonderdigimiz datanin formatini
         // belirtmek zorundayiz. Bunu da hemen given() methodundan sonra pre-condition olarak belirtebiliriz.
 
 

@@ -35,6 +35,21 @@ public class C01_Get_ApiSorgulama {
         Response response =given().when().get(url);
 
         response.prettyPrint();
+
+        /*
+          dönen response
+          {
+        "firstname": "Jim",
+        "lastname": "Jackson",
+        "totalprice": 229,
+        "depositpaid": false,
+        "bookingdates": {
+             "checkin": "2016-07-24",
+             "checkout": "2016-09-14"
+    }
+}
+         */
+
         System.out.println("Status Code : " + response.getStatusCode());
         System.out.println("Content Type : " + response.getContentType());
         System.out.println("Server Header Degeri : " + response.getHeader("Server"));

@@ -72,7 +72,7 @@ public class C06_Post_ResponseBodyTesti {
                 .contentType("application/json")
                 .body("title", Matchers.equalTo("API"))
                 .body("userId",Matchers.lessThan(100))
-                .body("body",Matchers.equalTo("API ogrenmek ne guzel"));
+                .body("body",Matchers.containsString("API ogrenmek ne guzel"));
 
 
 

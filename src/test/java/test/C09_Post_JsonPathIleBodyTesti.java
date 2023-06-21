@@ -2,6 +2,7 @@ package test;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.Test;
 
@@ -78,15 +79,15 @@ public class C09_Post_JsonPathIleBodyTesti {
         response
                 .then()
                 .assertThat()
-                            .statusCode(200)
-                            .contentType("application/json; charset=utf-8")
-                            .body("booking.firstname", equalTo("Ali"),
-                                    "booking.lastname",equalTo("Bak"),
-                                    "booking.totalprice",equalTo(500),
-                                    "booking.depositpaid",equalTo(false),
-                                    "booking.additionalneeds",equalTo("wi-fi"),
-                                    "booking.bookingDates.checkin",equalTo("2021-06-01"),
-                                    "booking.bookingDates.checkout",equalTo("2021-06-10"));
+                .statusCode(200)
+                .contentType("application/json; charset=utf-8")
+                .body("booking.firstname", equalTo("Ali"),
+                        "booking.lastname" , equalTo("Bak"),
+                        "booking.totalprice" , equalTo(500),
+                        "booking.depositpaid" , equalTo(false),
+                        "booking.additionalneeds" , equalTo("wi-fi"),
+                        "booking.bookingdates.checkin" , equalTo("2021-06-01"),
+                        "booking.bookingdates.checkout" , equalTo("2021-06-10"));
 
 
 
