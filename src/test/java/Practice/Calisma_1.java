@@ -1,4 +1,4 @@
-package Kendi_Calismalarim;
+package Practice;
 
 import io.restassured.response.Response;
 import org.junit.Assert;
