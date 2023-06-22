@@ -41,7 +41,7 @@ public class C11_Get_ExpectedDataOlusturma {
         expData.put("title","dolor sint quo a velit explicabo quia nam");
         expData.put("body","eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse");
 
-        System.out.println("Expected Data : "+expData);
+        System.out.println("Expected Data : " + expData);
 
         // 3 - Response kaydet
 
