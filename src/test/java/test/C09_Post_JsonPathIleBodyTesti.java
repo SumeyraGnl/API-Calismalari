@@ -47,10 +47,10 @@ public class C09_Post_JsonPathIleBodyTesti {
 
         String url = "https://restful-booker.herokuapp.com/booking";
 
-        JSONObject bookingDates = new JSONObject();
+        JSONObject bookingdates = new JSONObject();
 
-        bookingDates.put("checkin" , "2021-06-01");
-        bookingDates.put("checkout" , "2021-06-10");
+        bookingdates.put("checkin" , "2021-06-01");
+        bookingdates.put("checkout" , "2021-06-10");
 
         JSONObject reqBody = new JSONObject();
 
@@ -59,7 +59,7 @@ public class C09_Post_JsonPathIleBodyTesti {
         reqBody.put("totalprice" , 500);
         reqBody.put("depositpaid" , false);
         reqBody.put("additionalneeds" , "wi-fi");
-        reqBody.put("bookingdates" , bookingDates);
+        reqBody.put("bookingdates" , bookingdates);
 
 
         // 2 - Expected Data hazirla
