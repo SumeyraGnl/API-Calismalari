@@ -1,5 +1,7 @@
 package testData;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class TestDataDummy {
@@ -20,6 +22,34 @@ public class TestDataDummy {
     "message":"Successfully! Record has been fetched."
     }
      */
+
+    public JSONObject dataOlusturJSON(){
+
+        JSONObject data = new JSONObject();
+
+        data.put("id",3);
+        data.put("employee_name","Ashton Cox");
+        data.put("employee_salary",86000);
+        data.put("employee_age",66);
+        data.put("profile_image","");
+
+        return data;
+    }
+
+
+    public JSONObject expDataOlusturJSON(){
+
+        JSONObject expData = new JSONObject();
+
+        expData.put("status","success");
+        expData.put("data",dataOlusturJSON());
+        expData.put("message","Successfully! Record has been fetched.");
+
+
+        return expData;
+    }
+
+
 
     public HashMap dataBodyOlusturMAP(){
 
