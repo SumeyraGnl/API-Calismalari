@@ -2,6 +2,8 @@ package testData;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 public class TestDataHerokuApp {
 
     /*
@@ -72,4 +74,86 @@ public class TestDataHerokuApp {
 
         return expData;
     }
+
+    public HashMap bookingdatesOlusturMAP(){
+
+        /*
+        "bookingdates" : {
+                  "checkin" : "2021-06-01",
+                  "checkout" : "2021-06-10"
+                            },
+         */
+
+        HashMap<String ,Object> bookingdates = new HashMap<>();
+
+        bookingdates.put("checkin" , "2021-06-01");
+        bookingdates.put("checkout" , "2021-06-10");
+
+        return bookingdates;
+    }
+
+    public HashMap requestBodyOlusturMAP(){
+
+        /*
+        Request body
+          {
+          "firstname" : "Ahmet",
+          "lastname" : “Bulut",
+          "totalprice" : 500,
+          "depositpaid" : false,
+          "bookingdates" : {
+                  "checkin" : "2021-06-01",
+                  "checkout" : "2021-06-10"
+                            },
+          "additionalneeds" : "wi-fi"
+          }
+         */
+
+
+
+
+        HashMap<String ,Object> booking = new HashMap<>();
+
+        booking.put("firstname","Ahmet");
+        booking.put("lastname","Bulut");
+        booking.put("totalprice" , 500.0);
+        booking.put("depositpaid" , false);
+        booking.put("bookingdates" , bookingdatesOlusturMAP());
+        booking.put("additionalneeds" , "wi-fi");
+
+
+        return booking;
+    }
+
+
+    public HashMap expectedBodyOlusturMAP(){
+
+        /*
+        Response Body // expected data
+          {
+             "bookingid": 24,
+             "booking": {
+                    "firstname": "Ahmet",
+                    "lastname": "Bulut",
+                    "totalprice": 500,
+                    "depositpaid": false,
+                    "bookingdates": {
+                             "checkin": "2021-06-01",
+                             "checkout": "2021-06-10"
+                                     },
+                    "additionalneeds": "wi-fi"
+                          }
+          }
+         */
+
+        HashMap<String ,Object> expData = new HashMap<>();
+
+        expData.put("bookingid" , 24);
+        expData.put("booking" , requestBodyOlusturMAP());
+
+
+        return expData;
+    }
+
+
 }
